@@ -58,7 +58,7 @@ args = parser.parse_args()
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 cpu = torch.device("cpu")
 gpu = torch.device("cuda:0")
-
+os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
 
 def train():
     cfg = voc   # voc config dict
